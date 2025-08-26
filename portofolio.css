@@ -223,8 +223,12 @@
   background-color: #f7f7f7;
 }
 
-.btn-informasi{
-  
+.light-mode .btn-informasi{
+  transition: 300ms;
+}
+
+.light-mode .btn-informasi:hover{
+  color: #e5e7eb;
 }
 
 /* ============================================================================ */
