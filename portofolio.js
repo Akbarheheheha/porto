@@ -55,38 +55,44 @@
 
       // Typing animation
       const typingText = document.getElementById("typing-text");
-      const texts = [
-        "Membuat pengalaman digital yang menakjubkan",
-        "Frontend  Developer",
-        "UI/UX Enthusiast",
-        "Problem Solver",
-      ];
-      let textIndex = 0;
-      let charIndex = 0;
-      let isDeleting = false;
+const texts = [
+  "Membuat pengalaman digital yang menakjubkan",
+  "Frontend Developer",
+  "UI/UX Enthusiast",
+  "Problem Solver",
+];
 
-      function typeWriter() {
-        const currentText = texts[textIndex];
+let textIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
 
-        if (isDeleting) {
-          typingText.textContent = currentText.substring(0, charIndex - 1);
-          charIndex--;
-        } else {
-          typingText.textContent = currentText.substring(0, charIndex + 1);
-          charIndex++;
-        }
+function typeWriter() {
+  const currentText = texts[textIndex];
 
-        if (!isDeleting && charIndex === currentText.length) {
-          setTimeout(() => (isDeleting = true), 2000);
-        } else if (isDeleting && charIndex === 0) {
-          isDeleting = false;
-          textIndex = (textIndex + 1) % texts.length;
-        }
+  if (isDeleting) {
+    // Ubah ini: charIndex > 1, biar sisa 1 huruf
+    typingText.textContent = currentText.substring(0, charIndex - 1);
+    charIndex--;
 
-        setTimeout(typeWriter, isDeleting ? 50 : 100);
-      }
+    if (charIndex === 1) {
+      isDeleting = false;
+      textIndex = (textIndex + 1) % texts.length;
+    }
+  } else {
+    const nextText = texts[textIndex];
+    typingText.textContent = nextText.substring(0, charIndex + 1);
+    charIndex++;
 
-      typeWriter();
+    if (charIndex === nextText.length) {
+      setTimeout(() => (isDeleting = true), 2000); // tunggu sebelum hapus
+    }
+  }
+
+  setTimeout(typeWriter, isDeleting ? 50 : 100);
+}
+
+typeWriter();
+
 
       // Contact form
       document
