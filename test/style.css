@@ -1,0 +1,298 @@
+html * {
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: "Poppins";
+}
+
+:root {
+  --accent: #4a90e2;
+}
+
+/* navbar */
+nav {
+  background-color: #ffffff;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.088);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: auto;
+  padding-block: 15px;
+  z-index: 1000;
+}
+
+.judul {
+  margin-inline-start: 20px;
+  font-size: 20px;
+  font-style: bold;
+  cursor: pointer;
+  transition: 1s ease;
+  background: linear-gradient(
+    127deg,
+    rgba(5, 5, 5, 1) 0%,
+    rgba(119, 122, 120, 1) 52%,
+    rgba(5, 5, 5, 1) 100%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.judul:hover {
+  transform: scaleX(-1);
+
+}
+
+ul {
+  display: flex;
+  margin-inline-end: 20px;
+}
+
+li {
+  display: block;
+  padding: 10px 20px;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  color: black;
+}
+ul:hover li {
+  opacity: 0.2;
+}
+
+ul:hover li:hover {
+  opacity: 1;
+  color: black;
+  border-left: 0.1px solid rgba(0, 0, 0, 0.088);
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  position: relative;
+  width: max-content;
+  padding: 5px;
+  letter-spacing: 1.2px;
+}
+
+nav a::after {
+  content: " ";
+  background: linear-gradient(to right, rgb(14, 15, 15), rgb(230, 230, 238));
+  height: 2.5px;
+  width: 0;
+  border-radius: 100px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: 0.6s;
+}
+a:hover::after {
+  width: 100%;
+}
+.tooltip-nav {
+  opacity: 0;
+  white-space: nowrap;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  padding-right: 8px;
+}
+li:hover .tooltip-nav {
+  opacity: 1;
+  margin-left: 4px;
+}
+
+/* halaman pertama */
+
+#home {
+}
+#bg1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -2222;
+}
+
+.pembungkus-utama {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  line-height: 1.6;
+}
+
+.pembuka {
+  width: 50%;
+  letter-spacing: 1.2px;
+  animation: animasi-pembuka 2s;
+}
+
+@keyframes animasi-pembuka {
+  0% {
+    transform: translateX(-700px) scale(0.8);
+  }
+  50% {
+    transform: translateX(0) scale(0.8);
+  }
+  100% {
+    transform: translateX(0) scale(1);
+  }
+}
+
+h1 {
+  background: #050505;
+  background: linear-gradient(
+    127deg,
+    rgba(5, 5, 5, 1) 0%,
+    rgba(119, 122, 120, 1) 52%,
+    rgba(5, 5, 5, 1) 100%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn {
+  display: flex;
+}
+
+.btn-about {
+  margin-top: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.btn-about a {
+  position: relative;
+  display: inline-block;
+  padding: 5px 15px;
+  color: black;
+  text-decoration: none;
+  z-index: 2;
+  transition: color 0.6s ease-in-out;
+}
+
+.btn-about a::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: black;
+  z-index: -1;
+  transition: width 0.6s ease-in-out;
+}
+
+.btn-about a:hover::after {
+  width: 100%;
+}
+
+.btn-about a:hover {
+  color: white;
+}
+
+.pembungkus-utama .pembuka-img img {
+  height: 450px;
+  width: 450px;
+  border-radius: 20px;
+  box-shadow: 0px 2px 2px rgb(29, 29, 29);
+  filter: grayscale(100%);
+  transition: filter 0.3s ease-in-out, transform 0.6s ease-in-out;
+  animation: hai 2s;
+}
+
+@keyframes hai {
+  0% {
+    opacity: 0;
+    transform: scale(0%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(100%);
+  }
+}
+
+.pembungkus-utama .pembuka-img img:hover {
+  filter: grayscale(0%);
+  transform: translateY(5px);
+}
+
+/* halaman-2 */
+
+#about-me {
+  height: 100vh;
+}
+
+.pembungkus-about {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+}
+
+.about-img {
+}
+
+.about-img img {
+  height: 450px;
+  width: 450px;
+  border-radius: 13px;
+}
+
+.social-icons {
+  display: block;
+  font-size: 24px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.tooltip {
+  opacity: 0;
+  white-space: nowrap;
+  background-color: #333;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.icon:hover .tooltip {
+  opacity: 1;
+  margin-left: 6px;
+}
+
+.about-text {
+  width: 50%;
+}
+
+.about-text h1 {
+  font-size: 2.5em;
+}
+
+@media screen and (max-width: 500px) {
+  nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+  .judul {
+    text-align: center;
+  }
+}
