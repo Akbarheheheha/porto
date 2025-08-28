@@ -198,7 +198,7 @@
 }
 
 .light-mode .home-section2 img:hover {
-  filter: grayscale(0); 
+  filter: grayscale(0);
   box-shadow: 0 0 10px #667eea, 0 0 20px #764ba2, 0 0 40px;
 }
 
@@ -219,15 +219,15 @@
   background-color: #e5e7eb;
 }
 
-.light-mode .section-skil{
+.light-mode .section-skil {
   background-color: #f7f7f7;
 }
 
-.light-mode .btn-informasi{
+.light-mode .btn-informasi {
   transition: 300ms;
 }
 
-.light-mode .btn-informasi:hover{
+.light-mode .btn-informasi:hover {
   color: #e5e7eb;
 }
 
@@ -285,8 +285,6 @@
 .icon-nav {
   margin-inline: 0px;
 }
-
-
 
 .container-home {
   display: flex;
@@ -399,6 +397,7 @@
     flex-wrap: wrap;
   }
   #home {
+    padding-top: 80px;
   }
   #about {
     margin-block: 60px;
